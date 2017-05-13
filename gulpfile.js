@@ -17,12 +17,12 @@ gulp.task("webpack-dev-server", function (callback) {
         colors: true, //终端中输出结果为彩色
         inline: true //实时刷新
     }).listen(8088, "localhost", function (err) {
-        // if (err) throw new gutil.PlugdistinError("webpack-dev-server", err);
+        if (err) console.error("webpack-dev-server", err);
+        console.log("http://localhost:8088/webpack-dev-server/index.html");
         // gutil.log("[webpack-dev-server]", "http://localhost:8088/webpack-dev-server/index.html");
     });
 });
 
-    console.log("process.env.ENV:" + JSON.stringify(process.env.ENV))
 gulp.task('cleanDist', function (cb) {
     return gulp.src(["dist/", "viewtemplate/"])
         .pipe(clean());
@@ -36,10 +36,8 @@ gulp.task('builTemplate', function (cb) {
 gulp.task("webpack", function (callback) {
     var myConfig = Object.create(webpackConfig);
     return webpack(myConfig, function (err, stats) {
-        // if(err) throw new gutil.PluginError("webpack", err);
-        // gutil.log("[webpack]", stats.toString({
-        //	 // output options
-        // }));
+        if (err) console.error("webpack-dev-server", err);
+        console.log("http://localhost:8088/webpack-dev-server/index.html");
         callback();
     });
 });
