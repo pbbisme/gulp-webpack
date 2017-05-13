@@ -5,6 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+var WebpackDevServer = require("webpack-dev-server");
 
 function getEntry(globPath, pathDir) {
   var files = glob.sync(globPath);
@@ -82,7 +83,8 @@ var config = {
         })
       }, {
         test: /\.html$/,
-        loader: "html-loader?-minimize" //避免压缩html,https://github.com/webpack/html-loader/issues/50
+        // use: [ 'html-loader?interpolate!./file.html' ]
+        loader: "html-loader?interpolate" //避免压缩html,https://github.com/webpack/html-loader/
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
@@ -115,8 +117,27 @@ var config = {
     //   },
     //   except: ['$super', '$', 'exports', 'require'] //排除关键字
     // }),
-    new webpack.HotModuleReplacementPlugin() //热加载
-  ]
+    new webpack.HotModuleReplacementPlugin(), //热加载
+
+    // new WebpackDevServer(webpack(myConfig), {
+    //   contentBase: "./dist/",
+    //   colors: true, //终端中输出结果为彩色
+    //   inline: true //实时刷新
+    // }).listen(8088, "localhost", function (err) {
+    //   if (err) {
+    //     console.error("webpack-dev-server", err);
+    //   } else {
+    //     console.log("http://localhost:8088/webpack-dev-server/index.html");
+    //   }
+    //   // gutil.log("[webpack-dev-server]", "http://localhost:8088/webpack-dev-server/index.html");
+    // })
+  ],
+  devServer: {
+    contentBase: "./dist/",
+    port: 8088,
+    colors: true, //终端中输出结果为彩色
+    inline: true //实时刷新
+  }
 };
 
 
@@ -125,7 +146,7 @@ console.log("pages::" + pages);
 pages.forEach(function (pathname) {
   var conf = {
     filename: 'page/' + pathname + '.html', //生成的html存放路径，相对于path
-    template: './viewtemplate/' + pathname + '.html', //html模板路径
+    template: './src/page/' + pathname + '.html', //html模板路径
     // template: './src/page/home/index.html', //html模板路径
     // template: './src/page/home/index.html', //html模板路径
 

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set cross-env ENV=DEV & gulp",
-    "build": "gulp cleanDist & gulp builTemplate &  gulp webpack"
+    "build":" webpack --progress --hide-modules"
   },
   "keywords": [],
   "author": "",
@@ -14,19 +13,12 @@
   "devDependencies": {
     "cross-env": "^5.0.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-watch": "^4.3.11",
-    "run-sequence": "^1.2.2",
     "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "glob": "^7.1.1",
-    "gulp-art-include": "^0.2.1",
-    "gulp-batch": "^1.0.5",
-    "gulp-webpack": "^1.5.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.9.0",
     "jquery": "1.12.0",
@@ -37,7 +29,6 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "^2.5.1"
   }
 }

@@ -2,24 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>多页测试页面1</title>
-    
-    @@include('../../components/meta.html')
-
+    <title>页面e34f得到3额1</title>
+    ${require('../../components/meta.html')}
 </head>
 
 <body>
-    @@include('../../components/header.html')
-    <div>
-        @@include('../../components/home/content.html') 
-        @@include('../../components/home/table.html') 
-        @@include('../../components/home/table1.html')
-    </div>
-    <div>
 
-        哈哈哈哈哈哈33333333333333333d3333333 dsfs
+    ${require('../../components/header.html')}
+    <div>
+        ${require('../../components/home/content.html')} 
+        ${require('../../components/home/table.html')} 
+        ${require('../../components/home/table1.html')}
     </div>
-    @@include('../../components/footer.html')
+    <div>
+        哈哈哈哈哈哈33333333333333333d3333333 dsfs
+    </div>    
+        ${require('../../components/footer.html')}
     <div>
     </div>
 </body>

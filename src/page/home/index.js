@@ -6,4 +6,5 @@ var _ = require('lodash');
 
 var content=require("../../components/home/content.js");
 content.init();
-console.log(4444)
+console.log(4477)
+console.log(444555)
