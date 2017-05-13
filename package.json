@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set cross-env ENV=DEV & gulp cleanDist",
+    "start": "set cross-env ENV=DEV & gulp",
     "build": "gulp cleanDist & gulp builTemplate &  gulp webpack"
   },
   "keywords": [],
