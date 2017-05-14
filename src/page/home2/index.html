@@ -2,23 +2,23 @@
 <html lang="en">
 
 <head>
-    <title>sssrrsss</title>
-    @@include('../../components/meta.html')
+    <title>页面二</title>
+    ${require('../../components/meta.html')}
 </head>
 
 <body>
-    @@include('../../components/header.html')
-    <div>
-        @@include('../../components/home/content.html') 
-        @@include('../../components/home/table.html') 
-        @@include('../../components/home/table1.html')
-    </div>
-    <div>
 
-        哈哈哈哈哈哈33333333333333333d3333333 dsfs
-    </div>
-    @@include('../../components/footer.html')
+    ${require('../../components/header.html')}
     <div>
+        ${require('../../components/home/content.html')} 
+        ${require('../../components/home/table.html')} 
+        ${require('../../components/home/table1.html')}
+    </div>
+    <div>
+        我是第二个页面
+    </div>
+    <div>
+        ${require('../../components/footer.html')}
     </div>
 </body>
 

@@ -1,18 +1,18 @@
 const path = require('path');
 const glob = require("glob");
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var WebpackDevServer = require("webpack-dev-server");
+let webpack = require('webpack');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+let CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+let UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+let WebpackDevServer = require("webpack-dev-server");
 
 function getEntry(globPath, pathDir) {
-  var files = glob.sync(globPath);
-  var entries = {},
+  let files = glob.sync(globPath);
+  let entries = {},
     entry, dirname, basename, pathname, extname;
 
-  for (var i = 0; i < files.length; i++) {
+  for (let i = 0; i < files.length; i++) {
     entry = files[i];
     dirname = path.dirname(entry);
     extname = path.extname(entry);
@@ -28,20 +28,19 @@ function getEntry(globPath, pathDir) {
   return entries;
 }
 
+let publishPath = "dist";
+const production = process.env.NODE_ENV === 'production';
+if (production) {
+  publishPath = "build"
+}
 
-const debug = process.env.NODE_ENV !== 'production';
-console.log(debug)
-var entries = getEntry('src/page/**/index.js', 'src/page/');
-var chunks = Object.keys(entries);
-console.log("chunks::");
-console.log(chunks);
-console.log("-----------------------------")
-console.log("entries::");
-console.log(entries);
-var config = {
+console.log("process.env.NODE_ENV::" + process.env.NODE_ENV)
+let entries = getEntry('src/page/**/index.js', 'src/page/');
+let chunks = Object.keys(entries);
+let config = {
   entry: entries,// { homeindex: './src/page/home/index.js' },
   output: {
-    path: path.join(__dirname, 'dist'), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
+    path: path.join(__dirname, publishPath), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
     publicPath: '/',				//模板、样式、脚本、图片等资源对应的server上的路径
     filename: 'js/[name].js',			//每个页面对应的主js的生成配置
   },
@@ -62,7 +61,7 @@ var config = {
         loader: ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: "css-loader!sass-loader?outputStyle=expanded",
-          publicPath: "/dist"
+          publicPath: publishPath
         })
       },
       {
@@ -71,7 +70,7 @@ var config = {
         loader: ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: "css-loader",
-          publicPath: "/dist"
+          publicPath: publishPath
         })
       }, {
         test: /\.less$/,
@@ -79,12 +78,14 @@ var config = {
         loader: ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: "css-loader!less-loader?outputStyle=expanded",
-          publicPath: "/dist"
+          publicPath: publishPath
         })
       }, {
         test: /\.html$/,
-        // use: [ 'html-loader?interpolate!./file.html' ]
-        loader: "html-loader?interpolate" //避免压缩html,https://github.com/webpack/html-loader/
+        use: [{
+          loader: production ? 'html-loader?interpolate&minimize' : 'html-loader?interpolate&-minimize'
+        }]
+        // loader: "html-loader?interpolate" 
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
@@ -111,12 +112,13 @@ var config = {
       disable: false,
       allChunks: true
     }), //单独使用link标签加载css并设置路径，相对于output配置中的publickPath
-    // new UglifyJsPlugin({ //压缩代码
-    //   compress: {
-    //     warnings: false
-    //   },
-    //   except: ['$super', '$', 'exports', 'require'] //排除关键字
-    // }),
+    production ? new UglifyJsPlugin({ //压缩代码
+      compress: {
+        warnings: false
+      },
+      // beautify: true,
+      except: ['$super', '$', 'exports', 'require'] //排除关键字
+    }) : function () { },
     new webpack.HotModuleReplacementPlugin(), //热加载
 
     // new WebpackDevServer(webpack(myConfig), {
@@ -133,7 +135,7 @@ var config = {
     // })
   ],
   devServer: {
-    contentBase: "./dist/",
+    contentBase: publishPath,
     port: 8088,
     colors: true, //终端中输出结果为彩色
     inline: true //实时刷新
@@ -141,10 +143,10 @@ var config = {
 };
 
 
-var pages = Object.keys(getEntry('src/page/**/*.html', 'src/page/'));
+let pages = Object.keys(getEntry('src/page/**/*.html', 'src/page/'));
 console.log("pages::" + pages);
 pages.forEach(function (pathname) {
-  var conf = {
+  let conf = {
     filename: 'page/' + pathname + '.html', //生成的html存放路径，相对于path
     template: './src/page/' + pathname + '.html', //html模板路径
     // template: './src/page/home/index.html', //html模板路径
