@@ -96,10 +96,11 @@ let config = {
     ]
   },
   plugins: [
-    // new CopyWebpackPlugin([{
-    //   from: __dirname + '/src/static',
-    //   top: __dirname + '/a/static/ad'
-    // }]),
+    new CopyWebpackPlugin([{
+      toType: "dir",
+      from: __dirname + '/src/static',
+      to: "static"
+    }]),
     new webpack.ProvidePlugin({ //加载jq
       $: 'jquery',
       _: 'lodash'
@@ -142,7 +143,14 @@ let config = {
     contentBase: publishPath,
     port: 8088,
     colors: true, //终端中输出结果为彩色
-    inline: true //实时刷新
+    inline: true, //实时刷新
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/$/, to: '/page/home/index.html' },
+        { from: /^\/s/, to: '/webpack-dev-server/page/home/index.html' },
+      ]
+    }
+
   }
 };
 

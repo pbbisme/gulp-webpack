@@ -1,7 +1,8 @@
 .content{
     /*background:firebrick;*/
-    background: url("http://www.easyicon.net/api/resizeApi.php?id=1191430&size=128");
-    background: url("${require(`../../static/Desert.jpg`)}");
+    /*background: url("http://www.easyicon.net/api/resizeApi.php?id=1191430&size=128");
+    background: url("${require(`../../static/Desert.jpg`)}");*/
+    background: url("/static/Desert.jpg");
     width: 100px;  
     height: 100px;
 

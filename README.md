@@ -7,7 +7,11 @@
 
 
 **static:静态资源目录**
-1. static/lib  第三方资源目录
-1. 
-1. 
-1. 
+
+
+
+## 打包命令
+    npm run build
+
+## 开发命令
+    npm run dev
