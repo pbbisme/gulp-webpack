@@ -6,7 +6,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 let UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 let WebpackDevServer = require("webpack-dev-server");
-
+let CopyWebpackPlugin = require('copy-webpack-plugin');
 function getEntry(globPath, pathDir) {
   let files = glob.sync(globPath);
   let entries = {},
@@ -57,53 +57,57 @@ let config = {
     rules: [ //加载器
       {
         test: /\.scss/,
-        // loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: "css-loader!sass-loader?outputStyle=expanded",
+        // use: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader!sass-loader?outputStyle=expanded",
           publicPath: publishPath
         })
       },
       {
         test: /\.css$/,
-        // loader: 'style-loader!css-loader'
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: "css-loader",
+        // use: 'style-loader!css-loader'
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader",
           publicPath: publishPath
         })
       }, {
         test: /\.less$/,
-        // loader: 'style-loader!css-loader!less-loader?outputStyle=expanded'
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: "css-loader!less-loader?outputStyle=expanded",
+        // use: 'style-loader!css-loader!less-loader?outputStyle=expanded'
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader!less-loader?outputStyle=expanded",
           publicPath: publishPath
         })
       }, {
         test: /\.html$/,
-        use: [{
-          loader: production ? 'html-loader?interpolate&minimize' : 'html-loader?interpolate&-minimize'
-        }]
-        // loader: "html-loader?interpolate" 
+        // use: [{
+        //   use: production ? 'html-loader?attrs=img:src img:data-src&interpolate&minimize' : 'html-loader?attrs=img:src img:data-src&interpolate&-minimize'
+        // }]
+        use: "html-loader?interpolate"
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader?name=fonts/[name].[ext]'
+        use: 'file-loader?name=fonts/[name].[ext]'
       }, {
         test: /\.(png|jpe?g|gif)$/,
-        loader: 'url-loader?limit=8192&name=imgs/[name].[ext][hash]'
+        use: 'url-loader?limit=8192&name=imgs/[name].[ext]?[hash]'
       }
     ]
   },
   plugins: [
+    // new CopyWebpackPlugin([{
+    //   from: __dirname + '/src/static',
+    //   top: __dirname + '/a/static/ad'
+    // }]),
     new webpack.ProvidePlugin({ //加载jq
       $: 'jquery',
       _: 'lodash'
     }),
     new CommonsChunkPlugin({
-      name: "commons.chunk", // 将公共模块提取，生成名为`vendors`的chunk
+      name: "commons.chunk", // 将公共模块提取，生成名为`commons`的chunk
       chunks: chunks, //提取哪些模块共有的部分
-      minChunks: chunks.length // 提取至少3个模块共有的部分
+      minChunks: chunks.length // 提取模块共有的部分
     }),
     // new ExtractTextPlugin('styles/[name].css'), //单独使用link标签加载css并设置路径，相对于output配置中的publickPath
 
