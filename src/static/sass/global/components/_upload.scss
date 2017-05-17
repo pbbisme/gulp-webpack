@@ -1,0 +1,185 @@
+.parentFileBox {
+	border: 2px dashed #028AF4;
+	background: #fff;
+	padding: 15px 15px 0;
+	margin: 0 auto 15px;
+	text-align: center;
+	width:100% !important;
+	height:auto;
+	overflow:hidden;
+	position:relative;
+	.fileBoxUl {
+		position:relative;
+		width:100%;
+		height:auto;
+		overflow:hidden;
+		padding-bottom:5px;
+		padding-left: 0;
+		li {
+			float:left;
+			width: 94px;
+			height: 94px;
+			border: 1px solid #e1e1e1;
+			margin-right:10px;
+			overflow:hidden;
+			position:relative;
+			background-color:#099;
+			&:hover {
+				.diyFileName {
+					display:block;
+				}
+			}
+			.viewThumb {
+				position:absolute;
+				top:0;
+				left:0;
+				width:94px;
+				height:94px;
+				overflow:hidden;
+				img {
+					width:100%;
+					height:100%;
+				}
+			}
+			.diyCancel,.diySuccess {
+				position:absolute;
+				width:32px;
+				height:32px;
+				top:2px;
+				right:2px;
+				cursor:pointer;
+				display:none;
+			}	
+			.diyCancel {
+				background:url(../../global/plugins/webuploader/images/x_alt.png) no-repeat;
+			}
+			.diySuccess {
+				background:url(../../global/plugins/webuploader/images/check_alt.png) no-repeat;
+				cursor:default;
+			}
+			.diyFileName {
+				position:absolute;
+				bottom:0px;
+				left:0px;
+				width:100%;
+				height:20px;
+				line-height:20px;
+				text-align:center;
+				color:#fff;
+				font-size:12px;
+				display:none;
+				background:url(../../global/plugins/webuploader/images/bgblack.png);
+			}
+			.diyBar {
+				bottom:0;
+				left:0;
+				position: absolute;
+				width: 94px;
+				height: 50px;
+				line-height:50px;
+				background:url(../../global/plugins/webuploader/images/bgblack.png);
+				display:none;
+				.diyProgressText {
+					font-size:14px;
+					text-align:center;
+					color:#FFF;
+					position:relative;
+					z-index:99;
+				}
+				.diyProgress {
+					position:absolute;
+					left:0;
+					top:42%;
+					height:24px;
+					width:100%;
+					background-color:#09F;
+					filter:alpha(opacity=70);
+					-moz-opacity:0.7;
+					opacity:0.7;
+					z-index:97;
+				}
+			}		
+		}
+		.diyUploadHover:hover .diyCancel {
+			display:block;
+		}
+	}
+}
+.avi_diy_bg,.txt_diy_bg,.doc_diy_bg,.zip_diy_bg,.csv_diy_bg,.xls_diy_bg,.mp3_diy_bg,.pdf_diy_bg,.rar_diy_bg ,.docx_diy_bg{
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.avi_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/avi.png);
+}
+.txt_diy_bg,.docx_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/txt.png);
+}
+.doc_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/doc.png);
+}
+.zip_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/zip.png);
+}
+.csv_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/csv.png);
+}
+.xls_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/xls.png);
+}
+.mp3_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/mp3.png);
+}
+.pdf_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/pdf.png);
+}
+.rar_diy_bg {
+	background-image:url(../../global/plugins/webuploader/images/filebg/rar.png);
+}
+
+
+.upload_wrap{
+	min-width: 708px;
+	max-width:790px;
+}
+.webuploader-container {
+	position: relative;
+	height:36px;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	width: 110px;
+	height: 33px;
+	//background: url(../../global/plugins/webuploader/images/uploadBtn.png) no-repeat 0 bottom;
+	cursor: pointer;
+	text-align: center;
+	overflow: hidden;
+	margin-bottom: 0;
+	font-weight: 400;
+	vertical-align: middle;
+	touch-action: manipulation;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: #FFF;
+	background-color: #32c5d2;
+	border-color: #32c5d2;
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}

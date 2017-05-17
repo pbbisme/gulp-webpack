@@ -1,0 +1,82 @@
+#toolbar {
+  position: fixed;
+  right: 0;
+  top: 48%;
+  width: 52px;
+}
+
+#toolbar ul li {
+  width: 52px;
+  padding: 0!important;
+  //height: 52px;
+  //border: 1px solid #00a8c6;
+  margin-top: 1px;
+  text-align: center;
+  //background-color: #dfeaf3;
+  position: relative;
+  background-color:#3598dc!important;
+  border: none!important;
+
+}
+
+#toolbar ul li.frist a {
+  margin-top: 0;
+  //line-height: 52px;
+}
+
+#toolbar ul li.last {
+  //height: 30px;
+  //line-height: 30px;
+}
+
+#toolbar ul li.last a {
+  display: block;
+  margin-top: 0;
+}
+
+#toolbar ul li a {
+  display: block;
+  margin-top: 2px;
+  color: #fff!important;
+  padding: 6px 12px!important;
+  font-size: 12px;
+}
+
+#toolbar ul li a:link, #toolbar ul li a:hover {
+  text-decoration: none;
+}
+
+#tooltext {
+  width: 20px;
+  height: 80px;
+  position: fixed;
+  right: -20px;
+  top: 50%;
+  margin-top: -40px;
+  background: #3598dc;
+  text-align: center;
+  cursor: pointer;
+}
+
+#tooltext a {
+  display: block;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#toolbar ul li.frist i, #toolbar ul li.last i {
+  /*display: none;*/
+  font-size: 16px;
+}
+
+#toolbar ul li.curr i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FF6600;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}

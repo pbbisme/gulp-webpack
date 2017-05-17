@@ -1,0 +1,21 @@
+.page-success {
+  text-align: center;
+  .number {
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #7bbbd6;
+    text-align: right;
+    letter-spacing: -10px;
+    line-height: 128px;
+    font-size: 128px;
+    font-weight: 300;
+  }
+  .details {
+    padding-top: 0;
+    text-align: left;
+    margin-left: 40px;
+    display: inline-block;
+  }
+}

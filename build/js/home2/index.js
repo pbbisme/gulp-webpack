@@ -1,1 +1,0 @@
-webpackJsonp([1],{10:function(n,o){console.log("jquery")},12:function(n,o,c){n.exports=c(3)},3:function(n,o,c){c(1),c(0);var i=c(2);c(10);i.init()}},[12]);

@@ -1,6 +1,6 @@
 
-require("../../components/home/content.css");
-require("../../components/home/table.less");
+require("_components/home/content.css");
+require("_components/home/table.less");
 
-var content=require("../../components/home/content.js");
+var content=require("_components/home/content.js");
 content.init(); 

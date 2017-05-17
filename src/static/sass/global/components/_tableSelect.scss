@@ -1,0 +1,44 @@
+.tableSelect{
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  background-color: #fff;
+  border: 1px solid #c2cad8;
+  border-radius: 4px;
+  color: #555;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  outline: 0;
+  padding: 0 4px !important;
+  height: auto;
+  min-height: 34px;
+  ul{
+    box-sizing: border-box;
+    display: block;
+    line-height: 1.42857;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    li{
+      color: #555;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: default;
+      //float: left;
+      margin: 5px 0 0 6px;
+      padding: 0 6px;
+      span{
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 3px;
+        color: #999;
+      }
+    }
+  }
+}

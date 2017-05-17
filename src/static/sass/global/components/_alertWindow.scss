@@ -1,0 +1,62 @@
+/*自定义弹窗*/
+#mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .4;
+  filter: alpha(opacity(40));
+  //position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999999999999;
+}
+#alert-window {
+  width: 380px;
+  padding-bottom: 10px;
+  background: #FBFBFB;
+  overflow: hidden;
+  position: fixed;
+  left: 400px;
+  top: 10% !important;
+  z-index: 9999999999999;
+  @include border-radius($general-border-radius);
+  border-width: 0;
+  @extend .md-shadow-z-1;
+}
+#alert-window .aw-title {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #EFEFEF;
+  padding: 15px;
+}
+#alert-window .aw-title h4 {
+  line-height: 1.42857;
+  margin: 0;
+}
+#alert-window .aw-title .aw-close {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  cursor: pointer;
+}
+
+#alert-window .aw-content {
+  padding: 30px 8px 42px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgb(229, 229, 229);
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+
+#alert-window .aw-content .msg {
+  font-size: 18px;
+}
+
+#alert-window .m-l-r-20 {
+  margin: 0 20px;
+}

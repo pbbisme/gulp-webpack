@@ -1,0 +1,30 @@
+/*********************************
+ METRONIC SQUARE STYLE COMPONENTS 
+*********************************/
+
+// Global settings
+$theme-style: 'square';
+$theme-type: 'default';
+
+@import '_components-p';
+body .jstree-default .jstree-disabled > .jstree-icon {
+  opacity: 1;
+  filter: none;
+  -webkit-filter: none;
+}
+body{
+  .page-header.navbar .top-menu .navbar-nav>li.dropdown{
+    padding: 0;
+  }
+}
+body .page-header.navbar .top-menu .navbar-nav>li.dropdown>.dropdown-toggle:last-child{
+  padding: 17px 10px 12px;
+  i{
+    line-height:1.25em;
+    font-size: 16px;
+  }
+}
+
+.popup_help{
+  display: none !important;
+}

@@ -7,6 +7,8 @@ let CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 let UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 let WebpackDevServer = require("webpack-dev-server");
 let CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+
 function getEntry(globPath, pathDir) {
   let files = glob.sync(globPath);
   let entries = {},
@@ -60,7 +62,15 @@ let config = {
         // use: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader!sass-loader?outputStyle=expanded",
+          use: "css-loader!sass-loader",
+          use: [{
+            loader: "css-loader"
+          }, {
+            loader: "sass-loader",
+            options: {
+              includePaths: ["src/static/sass"]
+            }
+          }],
           publicPath: publishPath
         })
       },
@@ -88,18 +98,25 @@ let config = {
         use: "html-loader?interpolate"
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: 'file-loader?name=fonts/[name].[ext]'
+        use: 'file-loader?name=static/fonts/[name].[ext]'
       }, {
         test: /\.(png|jpe?g|gif)$/,
-        use: 'url-loader?limit=8192&name=imgs/[name].[ext]?[hash]'
+        use: 'url-loader?limit=8192&name=static/imgs/[name].[ext]?[hash]'
       }
     ]
+  },
+  resolve: {
+    alias: {
+      _components: path.resolve(__dirname, 'src/components/'),
+      _static: path.resolve(__dirname, 'src/static/')
+    },
   },
   plugins: [
     new CopyWebpackPlugin([{
       toType: "dir",
       from: __dirname + '/src/static',
-      to: "static"
+      to: "static",
+      ignore: ["**/*.scss", "**/*.less",]
     }]),
     new webpack.ProvidePlugin({ //加载jq
       $: 'jquery',
@@ -184,6 +201,7 @@ pages.forEach(function (pathname) {
   }
   config.plugins.push(new HtmlWebpackPlugin(conf));
 });
-
-
+config.plugins.push(
+  new HtmlWebpackInlineSourcePlugin()
+);
 module.exports = config;
