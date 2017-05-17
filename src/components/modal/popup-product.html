@@ -1,0 +1,93 @@
+<!--popup-product start-->
+<div class="modal fade bs-modal-lg add" id="popup-product" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">商品选择</h4>
+            </div>
+            <div class="modal-body">
+                <div class="mb20">
+                    <div class="input-group input-large pull-left">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn green dropdown-toggle" data-toggle="dropdown" aria-expanded="false">选择类型
+                                <i class="fa fa-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:void(0);">商标</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">专利</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">版权</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">域名</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">其它</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control" placeholder="输入商品编号、名称、关键字">
+                    </div>
+
+                    <button type="button" class="btn ml20 btn-primary pull-left">查询</button>
+                    <button type="button" class="btn ml20 btn-primary pull-right">添加新商品</button>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form">
+                    <table class="table display nowrap table-striped table-bordered table-hover order-column" id="">
+                        <thead>
+                        <tr>
+                            <th class="table-checkbox sorting_disabled cc" rowspan="1" colspan="1">
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="group-checkable" data-set="#ctTable .checkboxes">
+                                    <span></span>
+                                </label>
+                            </th>
+                            <th>类型</th>
+                            <th>名称</th>
+                            <th>编号</th>
+                            <th>供应商</th>
+                            <th>交易类型</th>
+                            <th>采购价(元)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class=" cc"><label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" name="" class="checkboxes"><span></span></label>
+                            </td>
+                            <td>商标</td>
+                            <td>雅礼仔仔</td>
+                            <td>10913511</td>
+                            <td>南京益瑞电气有限公司</td>
+                            <td>转让</td>
+                            <td class="font-red-haze">2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td class=" cc"><label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" name="" class="checkboxes"><span></span></label>
+                            </td>
+                            <td>商标</td>
+                            <td>雅礼仔仔</td>
+                            <td>10913511</td>
+                            <td>南京益瑞电气有限公司</td>
+                            <td>转让</td>
+                            <td class="font-red-haze">2,000.00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="" type="button" class="btn green">选择</button>
+                <button class="btn red" data-dismiss="modal" aria-hidden="true">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--popup-product end-->

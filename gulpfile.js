@@ -55,22 +55,13 @@ gulp.task("webpack", function (callback) {
 gulp.task('sass', function () {
     // bootstrap compilation
     var CSS_PATCH = "./src/static/css";
-    gulp.src(['./src/static/sass/global/*.scss','./src/static/sass/bootstrap.scss','./src/static/sass/select2-bootstrap.min.scss'])
+    gulp.src(['./src/static/sass/**/*.scss'])
         .pipe(plugins.changed('./assets/global/plugins/bootstrap/css/'))
         .pipe(plugins.sass())
         .pipe(gulp.dest(CSS_PATCH))
         .pipe(plugins.minifyCss())
         .pipe(plugins.rename({ suffix: '.min' }))
         .pipe(gulp.dest(CSS_PATCH));
-
-    // select2 compilation using bootstrap variables
-    gulp.src('./src/static/sass/select2-bootstrap.min.scss')
-        .pipe(plugins.sass({ outputStyle: 'compressed' }))
-        .pipe(gulp.dest(CSS_PATCH))
-        .pipe(plugins.minifyCss())
-        .pipe(plugins.rename({ suffix: '.min' }))
-        .pipe(gulp.dest(CSS_PATCH));
-
 })
 
 
@@ -84,9 +75,9 @@ gulp.task('serve', function () {
     //sass 静态文件编译
     gulp.watch("./src/static/sass/**/*.scss", ["watchTask"]);
     //webpack模块编译
-    gulp.watch(["./src/**/*.(js|css|scss|html)", "./src/**/*.html"], ["webpack"]);
+    gulp.watch(["./src/**/*.html"], ["webpack"]);
 })
 
 
 //默认命令
-gulp.task('default', ['watch'])
+gulp.task('default', ['serve'])

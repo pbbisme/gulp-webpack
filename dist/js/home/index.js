@@ -1,9 +1,46 @@
 webpackJsonp([0],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
+/* 0 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+
+var o = 0;
+function a() {
+    alert("aaa")
+}
+
+
+module.exports = {
+    init: function (o1) {
+        o = o1;
+        var _this = this;
+        $(".content").click(function () {
+            alert(1)
+            _this.show();
+            console.log("神马玩意哦")
+        })
+        console.log(111);
+    }, show: function () {
+        a();
+        alert("o")
+    }
+}
+
+/***/ }),
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(0);
@@ -19,7 +56,6 @@ console.log(4477)
 console.log(444555)
 
 /***/ }),
-/* 5 */,
 /* 6 */
 /***/ (function(module, exports) {
 
@@ -17173,11 +17209,12 @@ module.exports = function(module) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(8)(module)))
 
 /***/ }),
-/* 10 */
+/* 10 */,
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(4);
+module.exports = __webpack_require__(5);
 
 
 /***/ })
-],[10]);
+],[11]);

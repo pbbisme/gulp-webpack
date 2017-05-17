@@ -43,7 +43,7 @@ let config = {
   entry: entries,// { homeindex: './src/page/home/index.js' },
   output: {
     path: path.join(__dirname, publishPath), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
-    publicPath: '/',				//模板、样式、脚本、图片等资源对应的server上的路径
+    // publicPath: '/',				//模板、样式、脚本、图片等资源对应的server上的路径
     filename: 'js/[name].js',			//每个页面对应的主js的生成配置
   },
   // entry: {
@@ -95,7 +95,7 @@ let config = {
         // use: [{
         //   use: production ? 'html-loader?attrs=img:src img:data-src&interpolate&minimize' : 'html-loader?attrs=img:src img:data-src&interpolate&-minimize'
         // }]
-        use: "html-loader?interpolate"
+        use: "html-loader?interpolate&ignoreCustomFragments=[/\<\{\{.*?}}/]"
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: 'file-loader?name=static/fonts/[name].[ext]'
@@ -119,8 +119,8 @@ let config = {
       ignore: ["**/*.scss", "**/*.less",]
     }]),
     new webpack.ProvidePlugin({ //加载jq
-      $: 'jquery',
-      _: 'lodash'
+      // $: 'jquery',
+      // _: 'lodash' 
     }),
     new CommonsChunkPlugin({
       name: "commons.chunk", // 将公共模块提取，生成名为`commons`的chunk

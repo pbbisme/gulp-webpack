@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": " cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "dev": "webpack-dev-server"
+    "dev": "cross-env NODE_ENV=dev gulp"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,7 @@
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
     "html-webpack-inline-source-plugin": "^0.0.8",
+    "node-sass": "^4.5.3",
     "run-sequence": "^1.2.2",
     "webpack-dev-server": "^1.16.5"
   },
