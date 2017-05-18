@@ -1,7 +1,7 @@
 //## Main Layout CSS Builder
-
 @import '../../global/_variables'; // global metronic framework variables
 @import '../../global/components/_mixins'; // global metronic framework mixings
+<<<<<<< HEAD
 
 @import '_variables'; // theme level variables  
 
@@ -18,21 +18,33 @@
 
 /***  
 Page Loading       
+=======
+@import '_variables'; // theme level variables
+@import 'layout/_print'; // print layout
+@import 'layout/_header'; // page header
+@import 'layout/_page-container'; // page main container
+@import 'layout/_sidebar'; // page sidebar
+@import 'layout/_content'; // page consnde
+@import 'layout/_footer'; // page footer
+@import 'layout/_theme-panel'; // theme customizer panel
+@import 'layout/_quick-sidebar'; // quick sidebar toggler
+
+/***
+Page Loading
+>>>>>>> 1bb6064a0f51e293472eeb0733508326157b3942
 ***/
 
 .page-on-load {
-	background: #fefefe;
-
-	.page-header,
-	.page-container,
-	.page-footer,
-	> .clearfix {
-		display: none;
-		transition: all 2s;
-	}
+    background: #fefefe;
+    .page-header,
+    .page-container,
+    .page-footer,
+    >.clearfix {
+        display: none;
+        transition: all 2s;
+    }
 }
 
-
 table {
-  word-break: break-word;
+    word-break: break-word;
 }

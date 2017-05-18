@@ -5829,6 +5829,3 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-
-.bbpu-1 {
-  color: red; }

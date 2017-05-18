@@ -55,7 +55,7 @@ gulp.task("webpack", function (callback) {
 gulp.task('sass', function () {
     // bootstrap compilation
     var CSS_PATCH = "./src/static/css";
-    gulp.src(['./src/static/sass/**/*.scss'])
+    return gulp.src(['./src/static/sass/**/*.scss'])
         .pipe(plugins.changed('./assets/global/plugins/bootstrap/css/'))
         .pipe(plugins.sass())
         .pipe(gulp.dest(CSS_PATCH))
@@ -76,6 +76,8 @@ gulp.task('serve', function () {
     gulp.watch("./src/static/sass/**/*.scss", ["watchTask"]);
     //webpack模块编译
     gulp.watch(["./src/**/*.html"], ["webpack"]);
+    gulp.watch(["./src/**/*.js", "./src/**/*.html", "./src/**/*.css", "./src/**/*.scss"], ["webpack"]);
+
 })
 
 

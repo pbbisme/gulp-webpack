@@ -1879,8 +1879,13 @@ Page Quick Sidebar
     .page-quick-sidebar-open .page-header .top-menu .dropdown-quick-sidebar-toggler > .dropdown-toggle i:before {
       content: ""/*rtl:""*/; }
 
+<<<<<<< HEAD
 /***  
 Page Loading       
+=======
+/***
+Page Loading
+>>>>>>> 1bb6064a0f51e293472eeb0733508326157b3942
 ***/
 .page-on-load {
   background: #fefefe; }
