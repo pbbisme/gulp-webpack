@@ -95,7 +95,7 @@ let config = {
         // use: [{
         //   use: production ? 'html-loader?attrs=img:src img:data-src&interpolate&minimize' : 'html-loader?attrs=img:src img:data-src&interpolate&-minimize'
         // }]
-        use: "html-loader?interpolate&ignoreCustomFragments=[/\<\{\{.*?}}/]"
+        use: "html-loader?interpolate&minimize=false"
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: 'file-loader?name=static/fonts/[name].[ext]'
@@ -188,11 +188,8 @@ pages.forEach(function (pathname) {
 		 * 另外，UglifyJsPlugin会在压缩代码的时候连同html一起压缩。
 		 * 为避免压缩html，需要在html-loader上配置'html?-minimize'，见loaders中html-loader的配置。
 		 */
-    minify: { //压缩HTML文件
-      removeComments: true, //移除HTML中的注释
-      collapseWhitespace: false //删除空白符与换行符
-    }
-  };
+    minify: false
+  }; 
   if (pathname in config.entry) {
     // conf.favicon = path.resolve(__dirname, 'src/imgs/favicon.ico');
     conf.chunks = ['commons.chunk', pathname];
