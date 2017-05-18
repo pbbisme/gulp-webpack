@@ -1,1 +1,1 @@
-console.log(2)
+require("_components/contractDetail/content.scss")
