@@ -1,76 +1,133 @@
-<head><link href="../../styles/home/index.css?c1786e1a5c2b162bbd6b" rel="stylesheet"></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve '../../components/meta.html' in 'E:\www\gulp-webpack\src\page\home':
-  Error: Can't resolve '../../components/meta.html' in 'E:\www\gulp-webpack\src\page\home'
-  
-  - compiler.js:76 
-    [gulp-webpack]/[.2.28.0@html-webpack-plugin]/lib/compiler.js:76:16
-  
-  - Compiler.js:296 Compiler.<anonymous>
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compiler.js:296:10
-  
-  - Compiler.js:499 
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compiler.js:499:13
-  
-  - Tapable.js:138 next
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:138:11
-  
-  - CachePlugin.js:62 Compiler.<anonymous>
-    [gulp-webpack]/[.2.5.1@webpack]/lib/CachePlugin.js:62:5
-  
-  - Tapable.js:142 Compiler.applyPluginsAsyncSeries
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:142:13
-  
-  - Compiler.js:496 
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compiler.js:496:10
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:649 self.applyPluginsAsync.err
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compilation.js:649:19
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:640 self.applyPluginsAsync.err
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compilation.js:640:11
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:635 self.applyPluginsAsync.err
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compilation.js:635:10
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:631 sealPart2
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compilation.js:631:9
-  
-  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
-  
-  - Compilation.js:579 Compilation.seal
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compilation.js:579:8
-  
-  - Compiler.js:493 
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compiler.js:493:16
-  
-  - Tapable.js:225 
-    [gulp-webpack]/[.0.2.6@tapable]/lib/Tapable.js:225:11
-  
-  - Compilation.js:481 _addModuleChain
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compilation.js:481:11
-  
-  - Compilation.js:452 processModuleDependencies.err
-    [gulp-webpack]/[.2.5.1@webpack]/lib/Compilation.js:452:13
-  
-  - next_tick.js:67 _combinedTickCallback
-    internal/process/next_tick.js:67:7
-  
-  - next_tick.js:122 process._tickDomainCallback
-    internal/process/next_tick.js:122:9
-  
-</pre><script type="text/javascript" src="../../js/commons.chunk.js?c1786e1a5c2b162bbd6b"></script><script type="text/javascript" src="../../js/home/index.js?c1786e1a5c2b162bbd6b"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>1</title>
+    <meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<!--当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari-->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<!--将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式-->
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<!--忽略将页面中的数字识别为电话号码-->
+<meta content="telephone=no" name="format-detection">
+<!--忽略Android平台中对邮箱地址的识别-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<link href="/static/css/bootstrap.css" rel="stylesheet">
+<link href="/static/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="/static/libs/simple-line-icons/simple-line-icons.css" rel="stylesheet">
+<link href="/static/libs/bootstrap-toastr/toastr.css" rel="stylesheet">
+<link href="/static/css/global/components-p.css" rel="stylesheet">
+<link href="/static/css/layout/layout/layout.css" rel="stylesheet">
+<link href="/static/css/layout/layout/themes/darkblue.css" rel="stylesheet">
+<link href="/static/css/layout/layout/custom.css" rel="stylesheet">
+
+<script type="text/javascript" src="/static/libs/jquery.min.js"></script>
+<script type="text/javascript" src="/static/libs/bootstrap/js/bootstrap.js"></script>
+
+<link href="../../styles/home/index.css?260c57f3c4202514bcf0" rel="stylesheet"></head>
+
+<body class="page-container bg-white">
+    <div>
+    头部模块 点点滴滴 223
+    但是东风风神 
+</div> 
+    <div>
+        <div class="bbpu-1">
+    哈哈哈  
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+            <input type="text" class="form-control" placeholder="Search for...">
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-addon">
+        <input type="checkbox" aria-label="...">
+      </span>
+            <input type="text" class="form-control" aria-label="...">
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-addon">
+        <input type="radio" aria-label="...">
+      </span>
+            <input type="text" class="form-control" aria-label="...">
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row --> 
+        <table class="table1">
+    <thead>
+        <tr>
+            <th>less测试1</th>
+            <th>less测试2</th>
+            <th>ddsadas</th>
+        </tr>
+    </thead> 
+    <tbody>
+        <td>2</td>
+        <td>2</td>
+        <td>ssssdd2</td>
+    </tbody>
+
+</table> 
+        <table class="table2">
+    <thead>
+        <tr>
+            <th>scss测试</th>
+            <th>scss测试DS</th>
+            <th>scss测dd试</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td>2e</td> 
+        <td>2r</td>
+        <td>2ssss</td>
+    </tbody>
+</table>
+<div>测试2</div> 
+<div>测试</div> 
+    </div>
+    <div>
+        <div class="page-footer">
+    <div class="coa mat cc">
+        <span>2017 &copy; 一不小心就挂了</span>
+        <!--<a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>-->
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+</div>
+    </div>
+<script type="text/javascript" src="../../js/commons.chunk.js?260c57f3c4202514bcf0"></script><script type="text/javascript" src="../../js/home/index.js?260c57f3c4202514bcf0"></script></body>
+
+</html>
