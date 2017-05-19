@@ -28,12 +28,7 @@ class ContentDetail {
         $("#download1").on("click", function () {
             emitter.emit('download', "  下载卖方合同（专利）"); //往外抛出个事件  
         })
-    };
+    }; 
 }
-/**
- * 这是模块的属性存放地方
- */
-ContentDetail.a = 1;
-ContentDetail.b = 2;
 
 export default new ContentDetail();
