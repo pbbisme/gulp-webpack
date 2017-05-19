@@ -58,7 +58,17 @@ let config = {
   module: {
     rules: [ //加载器
       {
-        test: /\.scss/,
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
+      },
+      {
+        test: /\.scss$/,
         // use: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
@@ -108,7 +118,9 @@ let config = {
   resolve: {
     alias: {
       _components: path.resolve(__dirname, 'src/components/'),
-      _static: path.resolve(__dirname, 'src/static/')
+      _static: path.resolve(__dirname, 'src/static/'),
+      _service: path.resolve(__dirname, 'src/service/'),
+      _tools: path.resolve(__dirname, 'src/tools/')
     },
   },
   plugins: [
@@ -189,7 +201,7 @@ pages.forEach(function (pathname) {
 		 * 为避免压缩html，需要在html-loader上配置'html?-minimize'，见loaders中html-loader的配置。
 		 */
     minify: false
-  }; 
+  };
   if (pathname in config.entry) {
     // conf.favicon = path.resolve(__dirname, 'src/imgs/favicon.ico');
     conf.chunks = ['commons.chunk', pathname];

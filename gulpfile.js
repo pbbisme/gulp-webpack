@@ -82,4 +82,4 @@ gulp.task('serve', function () {
 
 
 //默认命令
-gulp.task('default', ['serve'])
+gulp.task('default', ['webpack','serve'])

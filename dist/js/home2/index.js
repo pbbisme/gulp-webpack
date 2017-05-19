@@ -1,68 +1,68 @@
-webpackJsonp([1],[
-/* 0 */
+webpackJsonp([2],{
+
+/***/ 0:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 1 */
+
+/***/ 1:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
+
+/***/ 15:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(5);
+
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
 var o = 0;
 function a() {
-    alert("aaa")
+    alert("aaa");
 }
 
-
 module.exports = {
-    init: function (o1) {
+    init: function init(o1) {
         o = o1;
         var _this = this;
         $(".content").click(function () {
-            alert(1)
+            alert(1);
             _this.show();
-            console.log("神马玩意哦")
-        })
+            console.log("神马玩意哦");
+        });
         console.log(111);
-    }, show: function () {
+    }, show: function show() {
         a();
-        alert("o")
+        alert("o");
     }
-}
+};
 
 /***/ }),
-/* 3 */,
-/* 4 */
+
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
 __webpack_require__(0);
 __webpack_require__(1);
 
-var content=__webpack_require__(2);
-content.init(); 
-
-/***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(4);
-
+var content = __webpack_require__(2);
+content.init();
 
 /***/ })
-],[13]);
+
+},[15]);
