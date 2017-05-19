@@ -18,6 +18,11 @@ let contractDetail = {
     init: (context) => { //模块初始化      
         emitter.emit('init_befor', 34); //往外抛出个事件  
         _.assign(contractDetail, context);//
+        $("#download").on("click", function () {
+
+            emitter.emit('download', "下载卖方合同（商标及其它）"); //往外抛出个事件  
+
+        })
         emitter.emit('init_after', 67); //往外抛出个事件
     },
     on: emitter.addListeners.bind(emitter)

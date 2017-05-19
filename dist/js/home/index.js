@@ -11,7 +11,8 @@ webpackJsonp([1],[
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39,10 +40,10 @@ module.exports = {
 };
 
 /***/ }),
-/* 3 */,
 /* 4 */,
 /* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50,31 +51,31 @@ module.exports = {
 
 __webpack_require__(0);
 __webpack_require__(1);
-__webpack_require__(8);
+__webpack_require__(9);
 
-var content = __webpack_require__(2);
+var content = __webpack_require__(3);
 content.init();
 console.log(4477);
 console.log(444555);
 
 /***/ }),
-/* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 9 */,
 /* 10 */,
 /* 11 */,
 /* 12 */,
 /* 13 */,
-/* 14 */
+/* 14 */,
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(7);
 
 
 /***/ })
-],[14]);
+],[15]);
