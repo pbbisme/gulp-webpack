@@ -115,11 +115,15 @@ let config = {
       }
     ]
   },
+  externals: {
+    jquery: 'jQuery',
+    "bootstrap-table": 'bootstrap-table'
+  },
   resolve: {
     alias: {
       _components: path.resolve(__dirname, 'src/components/'),
       _static: path.resolve(__dirname, 'src/static/'),
-      _service: path.resolve(__dirname, 'src/service/'),
+      _service: path.resolve(__dirname, 'src/services/'),
       _tools: path.resolve(__dirname, 'src/tools/')
     },
   },

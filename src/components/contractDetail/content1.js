@@ -1,9 +1,11 @@
+//@ts-check
 import _ from "lodash"; //导入鲁大师
 import EventEmitter from "wolfy87-eventemitter"; //导入事件驱动 EventEmitter2
+import {f1} from "_service/contractDetail.js"; //
 
-let emitter = new EventEmitter();
+let emitter = new EventEmitter(); 
 
-class ContentDetail {
+class ContentDetail { 
     constructor(prop) {
         this.prop = prop;//模块的属性
         this.on = emitter.addListeners.bind(emitter);
@@ -26,6 +28,9 @@ class ContentDetail {
     //页面事件绑定
     bindEvent() {
         $("#download1").on("click", function () {
+            f1().then(function(arg){
+                console.log(arg)
+            });
             emitter.emit('download', "  下载卖方合同（专利）"); //往外抛出个事件  
         })
     }; 

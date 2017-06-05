@@ -1,6 +1,7 @@
+//@ts-check
 require("_components/contractDetail/content.scss")
 import content from '_components/contractDetail/content.js'
-import content1 from '_components/contractDetail/content1.js'
+import content1 from '../../components/contractDetail/content1.js'
 import _ from "lodash";
 
 // console.log(_.chunk(['a', 'b', 'c', 'd'], 2));
