@@ -1,12 +1,15 @@
 import * as topicService from "_service/topic.js";
 require("./table.scss");
 
-import UIBase from "../UIBase.js";
+import UIBase from "_components/UIBase.js";
 import qs from 'qs';
 import querystring from 'blear.core.querystring';
 import querystring1 from 'blear.utils.querystring';
 import _ from "lodash"; //导入鲁大师
 import { f1 } from "_service/contractDetail.js"; //
+window.qs = qs;
+window.querystring = querystring;
+window.querystring1 = querystring1;
 
 class Table extends UIBase {
     constructor(prop) {
@@ -28,25 +31,13 @@ class Table extends UIBase {
     init() {
         this.bindEvent();
         this.initTable();
-        // $.get("https://cnodejs.org/api/v1/topics", function (d) {
-        //     console.log(d)
-        // })
-        // console.log("xd")
-        // $.ajax({
-        //     crossDomain: true,
-        //     url: "https://cnodejs.org/api/v1/topics",
-        //     success: function (data) {
-        //         console.log("xxxxxxxxxxxxxxxxx")
-        //         callback(data);
-        //     },
-        // })
+        this.ListenersInputEmit();
     };
     initTable() {
         var _this = this;
         console.log(111111)
         this.table = $('#table_id_example').DataTable({
             ajax: function (data, callback, settings) {
-                console.log(222222222222)
                 $.ajax({
                     url: "https://cnodejs.org/api/v1/topics",
                     data: _this.tableQueryParams,
@@ -59,7 +50,6 @@ class Table extends UIBase {
             searching: false,
             ordering: false,
             paging: true,
-
             "pagingType": "full_numbers",
             "dom": 'rt<"pull-left"l><"pull-left"i><"pull-right"p><"clear">',
             aLengthMenu: [10, 20, 30, 40],
@@ -106,9 +96,11 @@ class Table extends UIBase {
     };
     //页面事件绑定
     bindEvent() {
-        var _this = this;
+        let _this = this;
+        let _super = super.guid();
         $("#mdrender").on("click", function () {
-            _this.Event.emit("ss","xxxx");
+            _this.Event.emit("table_out_click", "xxxx");
+            _this.e1();
             var old = _this.tableQueryParams.mdrender;
             _this.tableQueryParams.mdrender = !old;
             console.log(_this.tableQueryParams.mdrender)
@@ -117,6 +109,22 @@ class Table extends UIBase {
             _this.table.ajax.reload();
         })
     };
+    e1() {
+        let guid = super.guid();
+        this.Event.emit("ss", guid);
+    }
+    /**
+     * 监听内部输入时间 
+     * 事件名称：模块名称_input_动作  如  table_input_test ,
+     * 由外部组件往当前组件eimit事件
+     */
+    ListenersInputEmit() {
+        this.on({
+            "table_input_test": function () { //事件名称：模块名称_input_动作  如  table_input_test ,
+                console.log("xx")
+            }
+        })
+    }
 }
 
 export default new Table();
