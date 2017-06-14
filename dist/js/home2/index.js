@@ -39,13 +39,13 @@ __webpack_require__(8);
 __webpack_require__(9);
 
 var content = __webpack_require__(11);
-var bootStrapTable = __webpack_require__(60);
+var bootStrapTable = __webpack_require__(61);
 // debugger;
 content.init();
 
 /***/ }),
 
-/***/ 60:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -227,7 +227,7 @@ debugger;
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(24);
@@ -249,4 +249,4 @@ module.exports = __webpack_require__(24);
 
 /***/ })
 
-},[70]);
+},[71]);

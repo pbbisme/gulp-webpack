@@ -1,3 +1,5 @@
+
+
 var table=$('#table').bootstrapTable({
     undefinedText:"无", 
     striped:true,

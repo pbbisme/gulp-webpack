@@ -1,7 +1,6 @@
 import * as topicService from "_service/topic.js";
 require("./table.scss");
 
-//@ts-check
 import _ from "lodash"; //导入鲁大师
 import EventEmitter from "wolfy87-eventemitter"; //导入事件驱动 EventEmitter2
 import { f1 } from "_service/contractDetail.js"; //

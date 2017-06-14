@@ -53,7 +53,7 @@ console.log(444555);
 
 /***/ }),
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(25);
@@ -75,4 +75,4 @@ module.exports = __webpack_require__(25);
 
 /***/ })
 
-},[69]);
+},[70]);

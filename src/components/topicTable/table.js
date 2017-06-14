@@ -1,24 +1,20 @@
 import * as topicService from "_service/topic.js";
 require("./table.scss");
 
+import UIBase from "../UIBase.js";
 import qs from 'qs';
 import querystring from 'blear.core.querystring';
 import querystring1 from 'blear.utils.querystring';
 import _ from "lodash"; //导入鲁大师
-import EventEmitter from "wolfy87-eventemitter"; //导入事件驱动 EventEmitter2
 import { f1 } from "_service/contractDetail.js"; //
-window.Q1 = querystring;
-window.Q2 = querystring1;
-window.Q3=qs;
-let emitter = new EventEmitter();
 
-class Table {
+class Table extends UIBase {
     constructor(prop) {
+        super(prop);
         this.prop = prop;//模块的属性
-        this.tableQueryParams = { mdrender: false };//表格查询对象        
-        this.on = emitter.addListeners.bind(emitter);
+        this.tableQueryParams = { mdrender: false };//表格查询对象       
         this.table = null;
-    }; 
+    };
     //设置模块属性
     setProps(arg) {
         this.prop = _.assign(this.prop, arg);
@@ -32,19 +28,30 @@ class Table {
     init() {
         this.bindEvent();
         this.initTable();
+        // $.get("https://cnodejs.org/api/v1/topics", function (d) {
+        //     console.log(d)
+        // })
+        // console.log("xd")
+        // $.ajax({
+        //     crossDomain: true,
+        //     url: "https://cnodejs.org/api/v1/topics",
+        //     success: function (data) {
+        //         console.log("xxxxxxxxxxxxxxxxx")
+        //         callback(data);
+        //     },
+        // })
     };
     initTable() {
         var _this = this;
+        console.log(111111)
         this.table = $('#table_id_example').DataTable({
-            ajax: function (data, callback, settings) {//ajax配置为function,手动调用异步查询 {
-                // topicService.queryTopic(_this.tableQueryParams).then(function (data) {
-                //     callback(data);
-                // });
-
+            ajax: function (data, callback, settings) {
+                console.log(222222222222)
                 $.ajax({
                     url: "https://cnodejs.org/api/v1/topics",
                     data: _this.tableQueryParams,
                     success: function (data) {
+                        console.log(333333333333)
                         callback(data);
                     },
                 })
@@ -52,6 +59,9 @@ class Table {
             searching: false,
             ordering: false,
             paging: true,
+
+            "pagingType": "full_numbers",
+            "dom": 'rt<"pull-left"l><"pull-left"i><"pull-right"p><"clear">',
             aLengthMenu: [10, 20, 30, 40],
             info: true,
             columns: [{
@@ -98,6 +108,7 @@ class Table {
     bindEvent() {
         var _this = this;
         $("#mdrender").on("click", function () {
+            _this.Event.emit("ss","xxxx");
             var old = _this.tableQueryParams.mdrender;
             _this.tableQueryParams.mdrender = !old;
             console.log(_this.tableQueryParams.mdrender)
