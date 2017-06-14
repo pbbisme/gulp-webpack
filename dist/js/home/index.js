@@ -29,7 +29,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 26:
+/***/ 23:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37,7 +37,7 @@ module.exports = {
 
 __webpack_require__(8);
 __webpack_require__(9);
-__webpack_require__(55);
+__webpack_require__(54);
 
 var content = __webpack_require__(11);
 content.init();
@@ -46,7 +46,7 @@ console.log(444555);
 
 /***/ }),
 
-/***/ 55:
+/***/ 54:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -56,7 +56,7 @@ console.log(444555);
 /***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(26);
+module.exports = __webpack_require__(23);
 
 
 /***/ }),

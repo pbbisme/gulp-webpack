@@ -1,16 +1,9 @@
-import * as topicService from "_service/topic.js";
 require("./table.scss");
 
+import * as topicService from "_service/topic.js";
 import UIBase from "_components/UIBase.js";
-import qs from 'qs';
-import querystring from 'blear.core.querystring';
-import querystring1 from 'blear.utils.querystring';
 import _ from "lodash"; //导入鲁大师
 import { f1 } from "_service/contractDetail.js"; //
-window.qs = qs;
-window.querystring = querystring;
-window.querystring1 = querystring1;
-
 class Table extends UIBase {
     constructor(prop) {
         super(prop);

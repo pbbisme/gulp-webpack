@@ -1,6 +1,4 @@
-import EventEmitter from "wolfy87-eventemitter"; //导入事件驱动 EventEmitter2
-// import qs from 'qs'; //导入QS 获取浏览器参数?
-
+import EventEmitter from "wolfy87-eventemitter"; //导入事件驱动 EventEmitter
 import querystring from 'blear.core.querystring'; //导入QS 获取浏览器参数
 class UIBase {
     constructor() {
