@@ -15,6 +15,7 @@
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.4.0",
     "blear.core.querystring": "^1.0.3",
     "blear.utils.querystring": "^1.0.5",
@@ -39,6 +40,7 @@
     "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
+    "babel-runtime": "^6.23.0",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "glob": "^7.1.1",
